@@ -1,0 +1,32 @@
+.example-card {
+    max-width: 100%;
+    padding: 20px;
+    text-overflow: ellipsis;
+}
+
+.mat-card-title {
+    text-overflow: ellipsis;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.item {
+    flex-basis: 100%;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.thumbnail {
+    max-width: 100%;
+    padding: 10px;
+}
+
+.spinner {
+    margin: auto;
+}

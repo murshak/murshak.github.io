@@ -4,5 +4,30 @@
 <p>
   This website is a WIP project. Soon it will host all of the movies made by Alex! It will be an easy to find and customizable location for her to share her movies will all the friends and family in a safe way!
 </p>
-<img src="assets/cap.jpg" width="400" height="400">
+<!-- <img src="assets/cap.jpg" width="400" height="400"> -->
+<!-- <mat-slider min="1" max="100" step="1" value="50"></mat-slider> -->
+
+<mat-paginator [length]=totalVideos
+              [pageSize]="30"
+              (page)="handlePageEvent($event)"
+              aria-label="Select page">
+</mat-paginator>
+<div *ngIf="this.showSpinner">
+  <mat-spinner class="spinner">
+  </mat-spinner>
+</div>
+<div class="flex-container">
+  <div *ngFor="let video of videos">
+    <a href="https://www.youtube.com/watch?v={{video.snippet.resourceId.videoId}}">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>{{video.snippet.title}}</mat-card-title>
+        </mat-card-header>
+        <div class="thumbnail">
+          <img mat-card-image src={{video.snippet.thumbnails.high.url}} alt={{video.snippet.title}}>
+        </div>
+      </mat-card>
+  </a>
+  </div>
+</div>
 <router-outlet></router-outlet>
